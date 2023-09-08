@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<!--이 레이아웃은 일단 고정적으로 사용
+    id 지정할때 속성, 이름 사이에 클래스 이름 넣을것.
+    ex) 메인엑티비티면 et_main_text, 로그인엑티비티면 et_login_text
+    추가로 id에 대문자 넣지 말것.-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:id="@+id/view_main_parent"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#FF0101" />
+
+        <View
+            android:id="@+id/view_main_search"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/iv_main_logoMain"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="3dp"
+            android:background="#F8F8F8"
+            android:backgroundTint="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/et_main_text"
+            android:layout_alignBottom="@id/view_main_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_main_logoMain"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/sungdong_logo_main" />
+
+        <Button
+            android:id="@+id/btn_main_notification"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="4dp"
+            android:layout_toStartOf="@+id/btn_main_toLoginPage"
+            android:text="noti" />
+
+        <Button
+            android:id="@+id/btn_main_toLoginPage"
+            android:layout_marginRight="4dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:text="로그인" />
+
+        <Button
+            android:id="@+id/btn_main_category"
+            android:layout_marginLeft="4dp"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:text="Button" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
