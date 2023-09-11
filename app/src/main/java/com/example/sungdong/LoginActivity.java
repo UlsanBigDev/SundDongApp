@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
+    Private View
     private Button btn_toMainPage;
     private TextView tv_userID;
 
