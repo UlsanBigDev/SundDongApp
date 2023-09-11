@@ -1,13 +1,13 @@
 package com.example.sungdong;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_main_notification;
     private Button btn_main_toLoginPage;
     private Button btn_main_category;
-    private String str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btn_main_toLoginPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                str = et_main_text.getText().toString();
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.putExtra("str",str);
                 startActivity(intent);
             }
         });

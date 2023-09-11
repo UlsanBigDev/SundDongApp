@@ -33,6 +33,7 @@
             tools:layout_editor_absoluteY="71dp" />
 
         <TextView
+            android:id="@+id/tv_login_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="로그인"
@@ -41,8 +42,8 @@
 
     </RelativeLayout>
 
-    <ImageButton
-        android:id="@+id/iB_sub_logoMain"
+    <ImageView
+        android:id="@+id/iv_sub_logoMain"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:scaleType="centerCrop"
@@ -53,27 +54,28 @@
         app:srcCompat="@drawable/sungdong_logo_main" />
 
     <EditText
-        android:id="@+id/eT_login_inputID"
+        android:id="@+id/et_login_inputID"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="아이디"
         android:inputType="text"
-        android:text="Name"
+        android:text=""
+        android:hint="아이디 입력"
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iB_sub_logoMain" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_sub_logoMain" />
 
     <EditText
-        android:id="@+id/eT_login_inputPW"
+        android:id="@+id/et_login_inputPW"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
+        android:hint="비밀번호 입력"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/eT_login_inputID"
-        app:layout_constraintStart_toStartOf="@+id/eT_login_inputID"
-        app:layout_constraintTop_toBottomOf="@+id/eT_login_inputID" />
+        app:layout_constraintEnd_toEndOf="@+id/et_login_inputID"
+        app:layout_constraintStart_toStartOf="@+id/et_login_inputID"
+        app:layout_constraintTop_toBottomOf="@+id/et_login_inputID" />
 
     <CheckBox
         android:id="@+id/cb_login_autoLogin"
@@ -81,15 +83,15 @@
         android:layout_height="40dp"
         android:text="자동로그인"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/eT_login_inputPW"
-        app:layout_constraintTop_toBottomOf="@+id/eT_login_inputPW" />
+        app:layout_constraintStart_toStartOf="@+id/et_login_inputPW"
+        app:layout_constraintTop_toBottomOf="@+id/et_login_inputPW" />
 
     <CheckBox
         android:id="@+id/cb_login_saveID"
         android:layout_width="130dp"
         android:layout_height="40dp"
-        android:text="CheckBox"
-        app:layout_constraintEnd_toEndOf="@+id/eT_login_inputPW"
+        android:text="아이디 저장"
+        app:layout_constraintEnd_toEndOf="@+id/et_login_inputPW"
         app:layout_constraintTop_toTopOf="@+id/cb_login_autoLogin" />
 
     <Button
@@ -114,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_login_selectLogin" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_login_findPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FEFAFD"
