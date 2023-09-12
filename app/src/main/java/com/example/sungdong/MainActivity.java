@@ -2,15 +2,15 @@ package com.example.sungdong;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toolbar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar; // toolbar import 이걸로 해야댐 자동설정하면 오류 뜸
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
         btn_main_toLoginPage = findViewById(R.id.btn_main_toLoginPage);
         btn_main_category= findViewById(R.id.btn_main_category);
 
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 이거 왼쪽 상단버튼 만드는거
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_background);
 
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
-        navigationView = (NavigationView)findViewById(R.id.navigation_view);
+        drawerLayout = findViewById(R.id.drawerLayout);
+        navigationView = findViewById(R.id.navigation_view);
 
         iv_main_logoMain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn_main_category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (drawerLayout != null) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+                Toast.makeText(MainActivity.this, "카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btn_main_toLoginPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
