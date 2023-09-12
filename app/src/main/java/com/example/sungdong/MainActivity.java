@@ -41,10 +41,9 @@ public class MainActivity extends AppCompatActivity {
         view_main_search = findViewById(R.id.view_main_search);
         et_main_text = findViewById(R.id.et_main_text);
         iv_main_logoMain = findViewById(R.id.iv_main_logoMain);
-        btn_main_notification= findViewById(R.id.btn_main_notification);
+        btn_main_notification = findViewById(R.id.btn_main_notification);
         btn_main_toLoginPage = findViewById(R.id.btn_main_toLoginPage);
-        btn_main_category= findViewById(R.id.btn_main_category);
-
+        btn_main_category = findViewById(R.id.btn_main_category);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 if (drawerLayout_main != null) {
                     drawerLayout_main.openDrawer(GravityCompat.START);
                 }
-                Toast.makeText(MainActivity.this, "카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "메인 카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 

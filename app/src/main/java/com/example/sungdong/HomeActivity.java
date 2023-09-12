@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button btn_home_notification;
     private Button btn_home_toMypage;
     private Button btn_home_category;
+    private Button btn_home_categoryLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class HomeActivity extends AppCompatActivity {
         drawerLayout_home = findViewById(R.id.drawerLayout_home);
         navigationView = findViewById(R.id.navigation_view);
         toolbar = findViewById(R.id.toolbar);
+        btn_home_categoryLogout = findViewById(R.id.btn_home_categoryLogout);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 이거 왼쪽 상단버튼 만드는거
@@ -68,11 +70,21 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, "카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
             }
         });
+        
         btn_home_toMypage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                Intent intent = new Intent(HomeActivity.this,HomeActivity.class); // 여기서 마이페이지로 넘어가야함 MypageActivity.class
                 startActivity(intent);
+                Toast.makeText(HomeActivity.this, "마이페이지 기능을 추가해야합니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btn_home_categoryLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,HomeActivity.class); // 여기서 마이페이지로 넘어가야함 MypageActivity.class
+                startActivity(intent);
+                Toast.makeText(HomeActivity.this, "마이페이지 기능을 추가해야합니다.", Toast.LENGTH_SHORT).show();
             }
         });
     }

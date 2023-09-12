@@ -90,7 +90,7 @@
         android:layout_gravity="start"
         android:layout_marginEnd="-60dp"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/navi_header"
-        app:menu="@menu/navi_menu"/>
+        app:headerLayout="@layout/navi_main_header"
+        app:menu="@menu/navi_main_menu"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
