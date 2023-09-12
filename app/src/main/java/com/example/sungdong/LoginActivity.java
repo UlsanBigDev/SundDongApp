@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        Toast.makeText(LoginActivity.this, "로그인 페이지 입니다.", Toast.LENGTH_SHORT).show();
         btn_login_toMainPage = findViewById(R.id.btn_login_toMainPage);
         tv_login_text = findViewById(R.id.tv_login_text);
         iv_sub_logoMain = findViewById(R.id.iv_sub_logoMain);
@@ -61,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                     // 로그인 성공 시 HomeActivity로 이동
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    Toast.makeText(LoginActivity.this, "(주)성동물산 님 환영합니다.", Toast.LENGTH_SHORT).show();
                 } else {
                     // 로그인 실패 시 메시지 표시 (예: "로그인 실패. 다시 시도하세요.")
                     // 여기에 실패 메시지 처리를 원하는 방식으로 추가하세요.

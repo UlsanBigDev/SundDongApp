@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar; // toolbar import 이걸로 해야댐 자동설정하면 오류 뜸
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -19,7 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    DrawerLayout drawerLayout;
+    DrawerLayout drawerLayout_main;
     NavigationView navigationView;
 
     private View view_main_parent;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(MainActivity.this, "메인 액티비티입니다.", Toast.LENGTH_SHORT).show();
 
         view_main_parent = findViewById(R.id.view_main_parent);
         view_main_search = findViewById(R.id.view_main_search);
@@ -44,13 +45,14 @@ public class MainActivity extends AppCompatActivity {
         btn_main_toLoginPage = findViewById(R.id.btn_main_toLoginPage);
         btn_main_category= findViewById(R.id.btn_main_category);
 
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 이거 왼쪽 상단버튼 만드는거
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_background);
 
-        drawerLayout = findViewById(R.id.drawerLayout);
+        drawerLayout_main = findViewById(R.id.drawerLayout_main);
         navigationView = findViewById(R.id.navigation_view);
 
         iv_main_logoMain.setOnClickListener(new View.OnClickListener() {
@@ -64,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
         btn_main_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (drawerLayout != null) {
-                    drawerLayout.openDrawer(GravityCompat.START);
+                if (drawerLayout_main != null) {
+                    drawerLayout_main.openDrawer(GravityCompat.START);
                 }
                 Toast.makeText(MainActivity.this, "카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
             }
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case android.R.id.home:{
-                drawerLayout.openDrawer(GravityCompat.START);
+                drawerLayout_main.openDrawer(GravityCompat.START);
                 return true;
             }
         }
@@ -91,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed(){
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
+        if (drawerLayout_main.isDrawerOpen(GravityCompat.START)){
+            drawerLayout_main.closeDrawer(GravityCompat.START);
         }else {
             super.onBackPressed();
         }

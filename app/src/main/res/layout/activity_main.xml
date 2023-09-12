@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawerLayout"
+    android:id="@+id/drawerLayout_main"
     tools:context=".MainActivity">
 <!--이 레이아웃은 일단 고정적으로 사용
     id 지정할때 속성, 이름 사이에 클래스 이름 넣을것.
