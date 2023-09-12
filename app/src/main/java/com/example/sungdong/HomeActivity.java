@@ -16,33 +16,32 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
-    private View view_main_parent;
-    private View view_main_search;
-    private EditText et_main_text;
-    private ImageView iv_main_logoMain;
-    private Button btn_main_notification;
-    private Button btn_main_toLoginPage;
-    private Button btn_main_category;
-    private Button btn_main_categoryLogin;
+    private View view_home_parent;
+    private View view_home_search;
+    private EditText et_home_text;
+    private ImageView iv_home_logoMain;
+    private Button btn_home_notification;
+    private Button btn_home_toLoginPage;
+    private Button btn_home_category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
-        view_main_parent = findViewById(R.id.view_main_parent);
-        view_main_search = findViewById(R.id.view_main_search);
-        et_main_text = findViewById(R.id.et_main_text);
-        iv_main_logoMain = findViewById(R.id.iv_main_logoMain);
-        btn_main_notification= findViewById(R.id.btn_main_notification);
-        btn_main_toLoginPage = findViewById(R.id.btn_main_toLoginPage);
-        btn_main_category= findViewById(R.id.btn_main_category);
+        view_home_parent = findViewById(R.id.view_home_parent);
+        view_home_search = findViewById(R.id.view_home_search);
+        et_home_text = findViewById(R.id.et_home_text);
+        iv_home_logoMain = findViewById(R.id.iv_home_logoMain);
+        btn_home_notification= findViewById(R.id.btn_home_notification);
+        btn_home_toLoginPage = findViewById(R.id.btn_home_toLoginPage);
+        btn_home_category= findViewById(R.id.btn_home_category);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -53,31 +52,32 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigation_view);
 
-        iv_main_logoMain.setOnClickListener(new View.OnClickListener() {
+        iv_home_logoMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
 
-        btn_main_category.setOnClickListener(new View.OnClickListener() {
+        btn_home_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (drawerLayout != null) {
                     drawerLayout.openDrawer(GravityCompat.START);
                 }
-                Toast.makeText(MainActivity.this, "카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
-        btn_main_toLoginPage.setOnClickListener(new View.OnClickListener() {
+        btn_home_toLoginPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
+        //
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

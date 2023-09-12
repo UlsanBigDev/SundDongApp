@@ -48,5 +48,24 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn_login_selectLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 입력된 아이디와 비밀번호 가져오기
+                String inputID = et_login_inputID.getText().toString();
+                String inputPW = et_login_inputPW.getText().toString();
+
+                // 아이디 bigdev1234 비밀번호 bigdev1234!
+                if (inputID.equals("bigdev1234") && inputPW.equals("bigdev1234!")) {
+                    // 로그인 성공 시 HomeActivity로 이동
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                } else {
+                    // 로그인 실패 시 메시지 표시 (예: "로그인 실패. 다시 시도하세요.")
+                    // 여기에 실패 메시지 처리를 원하는 방식으로 추가하세요.
+                }
+            }
+        });
     }
 }
