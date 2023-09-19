@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/layout_main_relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         tools:ignore="MissingConstraints">
 
         <View
-            android:id="@+id/view_main_parent"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="#FF0101" />
@@ -63,28 +64,58 @@
             android:text="로그인" />
 
         <Button
-            android:id="@+id/btn_main_category"
+            android:id="@+id/btn_main_openCategory"
             android:layout_marginLeft="4dp"
             android:layout_width="25dp"
             android:layout_height="30dp"
             android:text="Button" />
 
     </RelativeLayout>
+
     <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/category"
+        android:id="@+id/drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btn_category_closeCategory"
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:text="CLOSE" />
+
+        <TextView
+            android:id="@+id/tv_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="#64BCD4"
+            android:gravity="center"
+            android:text="DRAWER"
+            android:textSize="40dp" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+    <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <include
+            android:id="@+id/content_main"
+            layout="@layout/content_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/main_menu"/>
 
-<!--이 레이아웃은 일단 고정적으로 사용
-    id 지정할때 속성, 이름 사이에 클래스 이름 넣을것.
-    ex) 메인엑티비티면 et_main_text, 로그인엑티비티면 et_login_text
-    추가로 id에 대문자 넣지 말것.-->
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </LinearLayout>

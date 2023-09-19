@@ -18,10 +18,6 @@ import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
-    DrawerLayout drawerLayout_home;
-    NavigationView navigationView;
-
     private View view_home_parent;
     private View view_home_search;
     private EditText et_home_text;
@@ -44,11 +40,6 @@ public class HomeActivity extends AppCompatActivity {
         btn_home_notification= findViewById(R.id.btn_home_notification);
         btn_home_toMypage = findViewById(R.id.btn_home_toMypage);
         btn_home_category= findViewById(R.id.btn_home_category);
-        toolbar = findViewById(R.id.toolbar);
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 이거 왼쪽 상단버튼 만드는거
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_background);
 
         iv_home_logoMain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,15 +47,6 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                 startActivity(intent);
                 Toast.makeText(HomeActivity.this, "홈액티비티 화면입니다.", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn_home_category.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawerLayout_home != null) {
-                    drawerLayout_home.openDrawer(GravityCompat.START);
-                }
-                Toast.makeText(HomeActivity.this, "카테고리 버튼을 클릭했습니다.", Toast.LENGTH_SHORT).show();
             }
         });
         
@@ -84,23 +66,5 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, "마이페이지 기능을 추가해야합니다.", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case android.R.id.home:{
-                drawerLayout_home.openDrawer(GravityCompat.START);
-                return true;
-            }
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    @Override
-    public void onBackPressed(){
-        if (drawerLayout_home.isDrawerOpen(GravityCompat.START)){
-            drawerLayout_home.closeDrawer(GravityCompat.START);
-        }else {
-            super.onBackPressed();
-        }
     }
 }

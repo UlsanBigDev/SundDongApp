@@ -15,14 +15,6 @@
         android:layout_height="100dp"
         tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.Material3.NavigationView">
-
-        </androidx.appcompat.widget.Toolbar>
-
         <View
             android:id="@+id/view_home_parent"
             android:layout_width="match_parent"

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SungDong</string>
+    <string name="menu_button">메뉴</string>
+    <string name="menu_alarm">메뉴알람</string>
+    <string name="menu_notification">메뉴알림</string>
+    <string name="menu_settings">메뉴세팅</string>
 </resources>
