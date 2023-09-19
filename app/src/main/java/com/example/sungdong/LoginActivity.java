@@ -42,14 +42,17 @@ public class LoginActivity extends AppCompatActivity {
         btn_login_findID = findViewById(R.id.btn_login_findID);
         btn_login_findPW = findViewById(R.id.btn_login_findPW);
 
+        // 로그인 창에서 다시 메인페이지로 넘어가는 버튼
         btn_login_toMainPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
 
+        // 로그인
         btn_login_selectLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,15 +60,27 @@ public class LoginActivity extends AppCompatActivity {
                 String inputID = et_login_inputID.getText().toString();
                 String inputPW = et_login_inputPW.getText().toString();
 
-                // 아이디 bigdev1234 비밀번호 bigdev1234!
-                if (inputID.equals("bigdev1234") && inputPW.equals("bigdev1234!")) {
+                // 아이디 1234 비밀번호 1234 - 나중에 로그인 구현 해야함.
+                if (inputID.equals("1234") && inputPW.equals("1234")) {
                     // 로그인 성공 시 HomeActivity로 이동
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP); // 이게 Intent 스텍 바꿔주는거 결국 Main을 삭제하고 로그인으로 다시 돌아와서 다시 Home 출력
                     startActivity(intent);
+                    Intent homeintent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(homeintent);
+                    finish();
                     Toast.makeText(LoginActivity.this, "(주)성동물산 님 환영합니다.", Toast.LENGTH_SHORT).show();
+                } else if (inputID.equals("1234") && !inputPW.equals("1234")) {
+                    et_login_inputPW.setText("");
+                    Toast.makeText(LoginActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                } else if (!inputID.equals("1234")) {
+                    et_login_inputID.setText("");
+                    et_login_inputPW.setText("");
+                    Toast.makeText(LoginActivity.this, "등록된 아이디가 없습니다.", Toast.LENGTH_SHORT).show();
                 } else {
-                    // 로그인 실패 시 메시지 표시 (예: "로그인 실패. 다시 시도하세요.")
-                    // 여기에 실패 메시지 처리를 원하는 방식으로 추가하세요.
+                    et_login_inputID.setText("");
+                    et_login_inputPW.setText("");
+                    Toast.makeText(LoginActivity.this, "회원정보를 다시 확인해 주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

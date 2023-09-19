@@ -1,1 +1,2 @@
-asdfasdf
+여기에
+// activity_main.xml

@@ -44,10 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         btn_home_notification= findViewById(R.id.btn_home_notification);
         btn_home_toMypage = findViewById(R.id.btn_home_toMypage);
         btn_home_category= findViewById(R.id.btn_home_category);
-        drawerLayout_home = findViewById(R.id.drawerLayout_home);
-        navigationView = findViewById(R.id.navigation_view);
         toolbar = findViewById(R.id.toolbar);
-        btn_home_categoryLogout = findViewById(R.id.btn_home_categoryLogout);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 이거 왼쪽 상단버튼 만드는거
