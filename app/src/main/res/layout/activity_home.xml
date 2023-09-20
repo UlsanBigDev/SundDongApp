@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
-    <!--이 레이아웃은 일단 고정적으로 사용
-        id 지정할때 속성, 이름 사이에 클래스 이름 넣을것.
-        ex) 메인엑티비티면 et_main_text, 로그인엑티비티면 et_login_text
-        추가로 id에 대문자 넣지 말것.-->
 
     <RelativeLayout
+        android:id="@+id/layout_home_relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         tools:ignore="MissingConstraints">
 
         <View
-            android:id="@+id/view_home_parent"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="#FF0101" />
@@ -25,7 +23,7 @@
             android:id="@+id/view_home_search"
             android:layout_width="300dp"
             android:layout_height="45dp"
-            android:layout_below="@+id/iv_home_logoMain"
+            android:layout_below="@+id/iv_home_logoHome"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
 
@@ -44,7 +42,7 @@
             android:layout_marginBottom="-3dp" />
 
         <ImageView
-            android:id="@+id/iv_home_logoMain"
+            android:id="@+id/iv_home_logoHome"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             app:srcCompat="@drawable/sungdong_logo_main" />
@@ -54,11 +52,11 @@
             android:layout_width="25dp"
             android:layout_height="30dp"
             android:layout_marginRight="4dp"
-            android:layout_toStartOf="@+id/btn_home_toMypage"
+            android:layout_toStartOf="@+id/btn_home_toMyPage"
             android:text="noti" />
 
         <Button
-            android:id="@+id/btn_home_toMypage"
+            android:id="@+id/btn_home_toMyPage"
             android:layout_marginRight="4dp"
             android:layout_alignParentRight="true"
             android:layout_width="25dp"
@@ -66,7 +64,7 @@
             android:text="로그인" />
 
         <Button
-            android:id="@+id/btn_home_category"
+            android:id="@+id/btn_home_openCategory"
             android:layout_marginLeft="4dp"
             android:layout_width="25dp"
             android:layout_height="30dp"
@@ -74,4 +72,147 @@
 
     </RelativeLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_home_3buttons"
+        android:layout_width="413dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_relativeLayout">
+
+
+        <Button
+            android:id="@+id/btn_home_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="추천상품" />
+
+        <Button
+            android:id="@+id/btn_home_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="인기상품" />
+
+        <Button
+            android:id="@+id/btn_home_saleItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="세일상품" />
+
+    </LinearLayout>
+
+    <!--ScrollView : 스크롤해서 상품 보여주기 : 쿠팡 디자인 래퍼런스 참고-->
+
+    <ScrollView
+        android:id="@+id/scroll_home_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_3buttons"
+        app:layout_constraintBottom_toTopOf="@+id/layout_home_bottom_btns">
+
+        <!--Linear : 아이템(상품) 을 담고있는 vertical LinearLayout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem00"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem01"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem02"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem03"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem04"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem05"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem06"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/imbtn_home_recommendItem07"
+                android:layout_width="match_parent"
+                android:layout_height="30mm"
+                android:layout_marginTop="1mm"
+                android:src="@android:drawable/btn_star" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--하단 홈 , 장바구니 버튼 : 타 레이아웃에서도 보이도록 중복작업 -->
+
+    <LinearLayout
+        android:id="@+id/layout_home_bottom_btns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/btn_home_toHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="처음으로" />
+
+        <Button
+            android:id="@+id/btn_home_basket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="장바구니" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

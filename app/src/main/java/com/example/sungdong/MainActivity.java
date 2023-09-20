@@ -57,6 +57,18 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "(처음으로)메인 액티비티 화면입니다.", Toast.LENGTH_SHORT).show();
             }
         });
+        btn_main_openCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "카테고리 기능 추가해야함", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btn_main_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "알림창 기능 추가해야함", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     private void reset(){
         et_main_text = findViewById(R.id.et_main_text);
