@@ -30,25 +30,17 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        reset();
+
         Toast.makeText(LoginActivity.this, "로그인 페이지 입니다.", Toast.LENGTH_SHORT).show();
-        btn_login_toMainPage = findViewById(R.id.btn_login_toMainPage);
-        tv_login_text = findViewById(R.id.tv_login_text);
-        iv_sub_logoMain = findViewById(R.id.iv_sub_logoMain);
-        et_login_inputID = findViewById(R.id.et_login_inputID);
-        et_login_inputPW = findViewById(R.id.et_login_inputPW);
-        cb_login_autoLogin = findViewById(R.id.cb_login_autoLogin);
-        cb_login_saveID = findViewById(R.id.cb_login_saveID);
-        btn_login_selectLogin = findViewById(R.id.btn_login_selectLogin);
-        btn_login_findID = findViewById(R.id.btn_login_findID);
-        btn_login_findPW = findViewById(R.id.btn_login_findPW);
 
         // 로그인 창에서 다시 메인페이지로 넘어가는 버튼
         btn_login_toMainPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+                Toast.makeText(LoginActivity.this, "로그인 화면 -> 메인화면", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -63,12 +55,8 @@ public class LoginActivity extends AppCompatActivity {
                 // 아이디 1234 비밀번호 1234 - 나중에 로그인 구현 해야함.
                 if (inputID.equals("1234") && inputPW.equals("1234")) {
                     // 로그인 성공 시 HomeActivity로 이동
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP); // 이게 Intent 스텍 바꿔주는거 결국 Main을 삭제하고 로그인으로 다시 돌아와서 다시 Home 출력
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
-                    Intent homeintent = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(homeintent);
-                    finish();
                     Toast.makeText(LoginActivity.this, "(주)성동물산 님 환영합니다.", Toast.LENGTH_SHORT).show();
                 } else if (inputID.equals("1234") && !inputPW.equals("1234")) {
                     et_login_inputPW.setText("");
@@ -84,5 +72,17 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void reset() {
+        btn_login_toMainPage = findViewById(R.id.btn_login_toMainPage);
+        tv_login_text = findViewById(R.id.tv_login_text);
+        iv_sub_logoMain = findViewById(R.id.iv_sub_logoMain);
+        et_login_inputID = findViewById(R.id.et_login_inputID);
+        et_login_inputPW = findViewById(R.id.et_login_inputPW);
+        cb_login_autoLogin = findViewById(R.id.cb_login_autoLogin);
+        cb_login_saveID = findViewById(R.id.cb_login_saveID);
+        btn_login_selectLogin = findViewById(R.id.btn_login_selectLogin);
+        btn_login_findID = findViewById(R.id.btn_login_findID);
+        btn_login_findPW = findViewById(R.id.btn_login_findPW);
     }
 }
