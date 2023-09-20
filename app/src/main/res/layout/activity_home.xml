@@ -130,58 +130,70 @@
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem00"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_gloves" />
 
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem01"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_golf" />
 
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem02"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_guard" />
 
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem03"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_spray" />
 
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem04"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_brush" />
 
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem05"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_tape" />
 
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem06"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_wet" />
 
             <ImageButton
                 android:id="@+id/imbtn_home_recommendItem07"
                 android:layout_width="match_parent"
-                android:layout_height="30mm"
+                android:layout_height="match_parent"
                 android:layout_marginTop="1mm"
-                android:src="@android:drawable/btn_star" />
+                app:srcCompat="@drawable/img_grinder" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="이용약관"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
