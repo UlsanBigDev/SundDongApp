@@ -1,0 +1,101 @@
+ <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_dvCategory"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_dvCategory_toolbarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카테고리"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_dvCategory"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_dvCategory"
+        app:layout_constraintStart_toStartOf="@+id/toolbar_dvCategory"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_dvCategory"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_dvCategory_Tohome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:text="홈으로"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_dvCategory"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_dvCategory">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_dvCategory_health"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="생활 / 건강"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btn_dvCategory_Baby"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="디지털 / 가전"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btn_dvCategory_sports"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="스포츠 / 레저"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btn_dvCategory_Baby"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="패션의류"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btn_dvCategory_Baby"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="패션잡화"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btn_dvCategory_baby"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="출산 / 육아"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btn_dvCategory_Baby"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="화장품 / 미용"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
+    </ScrollView>

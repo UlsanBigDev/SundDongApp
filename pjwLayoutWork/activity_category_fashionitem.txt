@@ -1,0 +1,238 @@
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_categoryBaby_top"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_categoryFeshionitem_toDvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="뒤로(카테고리로)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_categoryBaby_toolbarTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 패션잡화 "
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_categoryBaby_top"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_categoryBaby_top"
+        app:layout_constraintStart_toStartOf="@+id/toolbar_categoryBaby_top"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_categoryBaby_top"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_categoryBaby_subCategory"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_categoryBaby_top" />
+
+    <TextView
+        android:id="@+id/tv_categoryBaby_subCategoryTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="세부카테고리"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_categoryBaby_subCategory"
+        app:layout_constraintEnd_toEndOf="@+id/btn_categoryBaby_subCategory"
+        app:layout_constraintStart_toStartOf="@+id/btn_categoryBaby_subCategory"
+        app:layout_constraintTop_toTopOf="@+id/btn_categoryBaby_subCategory"
+        android:textColor="@color/white"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_categoryBaby_Subcategory"
+        android:layout_width="match_parent"
+        android:layout_height="10mm"
+        android:background="#B5B5B5"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_categoryBaby_subCategory" />
+
+    <ScrollView
+        android:id="@+id/scrollView_categoryBaby_itemList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteY="640dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_categoryBaby_Subcategory"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_categoryBaby_item00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_categoryBaby_item00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_categoryBaby_item01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_categoryBaby_item01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_categoryBaby_item02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_categoryBaby_item02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_categoryBaby_item03"
+                    android:layout_width="108dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_categoryBaby_item03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10mm"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btn_categoryBaby_toDvCategory2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="카테고리" />
+
+        <Button
+            android:id="@+id/btn_categoryBaby_toHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="홈으로" />
+
+        <Button
+            android:id="@+id/btn_categoryBaby_toBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="장바구니" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_categoryBaby_subCategoryBtnList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_categoryBaby_Subcategory"
+        app:layout_constraintEnd_toEndOf="@+id/btn_categoryBaby_subCategory"
+        app:layout_constraintStart_toStartOf="@+id/btn_categoryBaby_subCategory"
+        app:layout_constraintTop_toBottomOf="@+id/btn_categoryBaby_subCategory">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_categoryBaby_manShoes"
+                android:layout_width="19mm"
+                android:layout_height="wrap_content"
+                android:text="남성신발"
+                android:layout_marginLeft="1mm"/>
+
+            <Button
+                android:id="@+id/btn_categoryBaby_shoesWare"
+                android:layout_width="19mm"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2mm"
+                android:text="신발용품" />
+
+            <Button
+                android:id="@+id/btn_categoryHealth_gloves"
+                android:layout_width="19mm"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2mm"
+                
+                android:text="장갑" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>

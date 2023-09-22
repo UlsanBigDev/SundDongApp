@@ -1,0 +1,63 @@
+<androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_home_mypage"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_homeMypage_tohome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="처음으로"
+        android:textColorLink="#EDEBEB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_home_mypage"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btn_homeMypage_toBasket"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="장바구니" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_toOrderlist"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="주문조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_toRefundRequest"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="반품요청" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_toRefundList"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="반품조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_toSettingAlert"
+                android:layout_width="match_parent"
+                android:layout_height="20mm"
+                android:text="알림설정" />
+
+
+        </LinearLayout>
