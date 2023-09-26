@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:srcCompat="@drawable/sungdong_logo_main" />
+        app:srcCompat="@drawable/logo_main" />
 
     <EditText
         android:id="@+id/et_login_inputID"
