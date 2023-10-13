@@ -1,0 +1,136 @@
+
+<!--fragment를 활용해서 다시 제작한 홈 / 메인 레이아웃입니다.-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_topToolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_home_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tb_home_topToolbar"
+        app:layout_constraintTop_toTopOf="@id/tb_home_topToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/tb_home_topToolbar"
+        android:layout_marginStart="4dp"
+        android:backgroundTint="@color/darkRed"
+        android:textStyle="bold"
+        android:text="카테고리" />
+
+    <Button
+        android:id="@+id/btn_home_toMypage"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_topToolbar"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_topToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/tb_home_topToolbar"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:backgroundTint="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_home_toAlertList"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_topToolbar"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_topToolbar"
+        app:layout_constraintEnd_toStartOf="@+id/btn_home_toMypage"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="4dp"
+        android:backgroundTint="@color/white"/>
+
+
+<!--여기가 fragment 들어갈 곳 -->
+    <fragment
+        android:id="@+id/fragment_home_fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_itemBtns"
+        app:layout_constraintBottom_toTopOf="@+id/layout_home_basketBtns">
+    </fragment>
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_home_basketBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn_home_toStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:textStyle="bold"
+            android:text="보관함" />
+
+        <Button
+            android:id="@+id/btn_home_toBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:textStyle="bold"
+            android:text="장바구니" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_itemBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_topToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_home_recommendItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/darkRed"
+            android:text="추천상품" />
+
+        <Button
+            android:id="@+id/btn_home_popularItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/darkRed"
+            android:text="인기상품" />
+
+        <Button
+            android:id="@+id/btn_home_saleItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/darkRed"
+            android:text="인기상품" />
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
