@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeMypageActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_homeMypage_toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_homeMypage_toolbarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_homeMypage_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_homeMypage_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar_homeMypage_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_homeMypage_toolbar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="마이페이지" />
+
+    <Button
+        android:id="@+id/btn_homeMypage_toHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_homeMypage_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar_homeMypage_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_homeMypage_toolbar"
+        android:layout_marginLeft="2dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/darkRed"
+        android:textStyle="bold"
+        android:text="홈으로" />
+
+    <!--보관함 / 장바구니 버튼을 담는 Linear레이아웃-->
+
+    <LinearLayout
+        android:id="@+id/layout_homeMypage_baskets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_homeMypage_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/lightGray"
+            android:textColor="@color/dimGray"
+            android:textStyle="bold"
+            android:text="보관함"
+            />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/lightGray"
+            android:textColor="@color/dimGray"
+            android:textStyle="bold"
+            android:text="장바구니"
+            />
+    </LinearLayout>
+
+    <!--조회 툴바 부터 최하단 설정까지 스크롤뷰-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_homeMypage_baskets"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_homeMypage_lists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_homeMypage_inqueryToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layout_homeMypage_lists"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btn_homeMypage_orderInquery"
+                android:backgroundTint="@color/dimGray"
+                />
+
+            <TextView
+                android:id="@+id/tv_homeMypage_toolbarText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/toolbar_homeMypage_inqueryToolbar"
+                app:layout_constraintTop_toTopOf="@+id/toolbar_homeMypage_inqueryToolbar"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar_homeMypage_inqueryToolbar"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/lightGray"
+                android:textStyle="bold"
+                android:text="조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_orderInquery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_homeMypage_inqueryToolbar"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="주문조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_deliveryInquery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_orderInquery"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="배송조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_historyInquery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_deliveryInquery"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="상품이력조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_ledgerInquery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_historyInquery"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="원장조회" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_homeMypage_returnToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_ledgerInquery"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTint="@color/dimGray"
+                />
+
+            <TextView
+                android:id="@+id/tv_homeMypage_toolbarText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/toolbar_homeMypage_returnToolbar"
+                app:layout_constraintTop_toTopOf="@+id/toolbar_homeMypage_returnToolbar"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar_homeMypage_returnToolbar"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/lightGray"
+                android:textStyle="bold"
+                android:text="반품/교환/AS" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_returnRequest"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_homeMypage_returnToolbar"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="반품신청" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_returnInquery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_returnRequest"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="반품조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_exchangeInquery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_returnInquery"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="교환 이력 조회" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_asRequest"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_exchangeInquery"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="A/S 신청" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_asInquery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_asRequest"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="A/S 이력 조회" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_homeMypage_alertToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_asInquery"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTint="@color/dimGray"
+                />
+
+            <TextView
+                android:id="@+id/tv_homeMypage_toolbarText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/toolbar_homeMypage_alertToolbar"
+                app:layout_constraintTop_toTopOf="@+id/toolbar_homeMypage_alertToolbar"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar_homeMypage_alertToolbar"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/lightGray"
+                android:textStyle="bold"
+                android:text="내정보 / 알림" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_settingAlert"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_homeMypage_alertToolbar"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="푸시알림 설정" />
+
+            <Button
+                android:id="@+id/btn_homeMypage_modifyInformation"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_homeMypage_settingAlert"
+                android:backgroundTint="@color/lightGray"
+                android:textColor="@color/dimGray"
+                android:textStyle="bold"
+                android:text="내 정보 수정" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

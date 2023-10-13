@@ -40,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
                 Toast.makeText(LoginActivity.this, "로그인 화면 -> 메인화면", Toast.LENGTH_SHORT).show();
             }
         });

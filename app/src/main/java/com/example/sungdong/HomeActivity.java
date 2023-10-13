@@ -1,5 +1,6 @@
 package com.example.sungdong;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,8 @@ public class HomeActivity extends AppCompatActivity {
         btn_home_toMyPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, HomeMypageActivity.class);
+                startActivity(intent);
                 Toast.makeText(HomeActivity.this, "마이페이지 기능 추가해야함", Toast.LENGTH_SHORT).show();
             }
         });
