@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--최상단 툴바 + 뒤로가가 버튼-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_orderInquery_topToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:backgroundTint="@color/darkRed"/>
+
+    <TextView
+        android:id="@+id/tv_home_orderInquery_tbText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_orderInquery_topToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_orderInquery_topToolbar"
+        app:layout_constraintStart_toStartOf="@id/tb_home_orderInquery_topToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/tb_home_orderInquery_topToolbar"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="주문조회" />
+
+    <Button
+        android:id="@+id/btn_home_orderInquery_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_orderInquery_topToolbar"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_orderInquery_topToolbar"
+        android:layout_margin="6dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/darkRed"
+        android:textStyle="bold"
+        android:text="뒤로" />
+
+<!--상단 조회기간 버튼 4종 -->
+
+
+    <LinearLayout
+        android:id="@+id/layout_home_orderInquery_period"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_orderInquery_topToolbar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_period1day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="1일" />
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_period2day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="2일" />
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_periodWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="1주" />
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_periodMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="1달" />
+    </LinearLayout>
+
+<!--주문조회기간 date 직접 선택-->
+    <LinearLayout
+        android:id="@+id/layout_home_orderInquery_dateSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_orderInquery_period"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_home_orderInquery_startDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/tv_home_orderInquery_betweenDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=" - " />
+
+        <EditText
+            android:id="@+id/et_home_orderInquery_endDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
+    </LinearLayout>
+
+<!--배송처 , 회사구분 버튼-->
+
+    <LinearLayout
+        android:id="@+id/layout_home_orderInquery_delivery_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_orderInquery_dateSelect"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_deliveryDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="배송처" />
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="회사구분" />
+    </LinearLayout>
+
+
+    <!--하단 조회 필터 버튼 -->
+
+    <LinearLayout
+        android:id="@+id/layout_home_orderInquery_orderDiv_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_orderInquery_deliveryMethod"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_orderDivision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="주문구분" />
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_orderState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="주문상태" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_home_orderInquery_deliveryMethod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_orderInquery_delivery_company"
+        android:backgroundTint="@color/dimGray"
+        android:text="배송방법" />
+
+
+    <!--검색-->
+
+        <Button
+            android:id="@+id/btn_home_orderInquery_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layout_home_orderInquery_orderDiv_state"
+            android:backgroundTint="@color/dimGray"
+            android:text="검색" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
