@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--최상단 툴바 -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_historyProductInquery_topToolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/darkRed"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <Button
+        android:id="@+id/btn_home_historyProductInquery_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_historyProductInquery_topToolbar"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_historyProductInquery_topToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_historyProductInquery_topToolbar"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/darkRed"
+        android:text="뒤로가기" />
+
+    <TextView
+        android:id="@+id/tv_home_historyProductInquery_tbText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_historyProductInquery_topToolbar"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_historyProductInquery_topToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/tb_home_historyProductInquery_topToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_historyProductInquery_topToolbar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="이력상품조회" />
+
+<!--endOf최상단툴바-->
+
+<!--상단 조회기간 1개월 3개월 6개월 1년 버튼 -->
+
+    <LinearLayout
+        android:id="@+id/layout_home_historyProductInquery_datePeriod_btns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_historyProductInquery_topToolbar">
+
+        <Button
+            android:id="@+id/btn_home_historyProductInquery_datePeriod_1month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="1개월" />
+
+        <Button
+            android:id="@+id/btn_home_historyProductInquery_datePeriod_3month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="3개월" />
+
+        <Button
+            android:id="@+id/btn_home_historyProductInquery_datePeriod_6month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="6개월" />
+
+        <Button
+            android:id="@+id/btn_home_historyProductInquery_datePeriod_1year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="1년" />
+    </LinearLayout>
+
+    <!--end Of 상단 조회기간 1개월 3개월 6개월 1년 버튼-->
+
+    <LinearLayout
+        android:id="@+id/layout_home_historyProductInquery_etContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_historyProductInquery_datePeriod_btns">
+
+<!--직접 기간 설정하는 editText -->
+
+        <EditText
+            android:id="@+id/et_home_historyProductInquery_etStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/tv_home_historyProductInquery_betweenEt"
+            android:layout_width="14dp"
+            android:layout_height="wrap_content"
+            android:text=" - " />
+
+        <EditText
+            android:id="@+id/et_home_historyProductInquery_etEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
+    </LinearLayout>
+
+<!--end Of 직접 기간 설정하는 editText -->
+
+    <LinearLayout
+        android:id="@+id/layout_home_historyProductInquery_searchFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_historyProductInquery_etContainer">
+
+        <EditText
+            android:id="@+id/et_home_historyProductInquery_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="검색어를 입력하세요 ."
+            android:inputType="text" />
+
+        <LinearLayout
+            android:id="@+id/layout_home_historyProductInquery_productCode_deliveryPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_home_deliveryInquery_productCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="상품코드"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/et_home_historyProductInquery_deliveryPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="실배송처"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_home_historyProductInquery_productName_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_home_historyProductInquery_productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="품명"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/et_home_historyProductInquery_brnad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="브랜드"
+                android:inputType="text" />
+        </LinearLayout>
+
+<!--검색어 / 상품코드 / 실배송처 / 품명 / 브랜드 / 규격 / 모델명 editText-->
+        <LinearLayout
+            android:id="@+id/layout_home_historyProductInquery_standard_modelName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_home_historyProductInquery_standard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="규격"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/et_home_historyProductInquery_modelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="모델명"
+                android:inputType="text" />
+        </LinearLayout>
+    </LinearLayout>
+
+<!--end of 검색어 / 상품코드 / 실배송처 / 품명 / 브랜드 / 규격 / 모델명 editText-->
+
+<!--매출 ,제품기준 / 회사 전체 / 정렬법 , 검색 -->
+
+    <LinearLayout
+        android:id="@+id/layout_home_historyProductInquery_criteria_companyCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_historyProductInquery_searchFilters">
+
+        <Button
+            android:id="@+id/btn_home_historyProductInquery_criteria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="매출 / 제품기준"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_home_historyProductInquery_companyCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="회사 전체"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_home_historyProductInquery_sorting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dimGray"
+        android:text="정렬 방법"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_historyProductInquery_criteria_companyCategory" />
+
+    <Button
+        android:id="@+id/btn_home_historyProductInquery_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_historyProductInquery_sorting"
+        android:backgroundTint="@color/darkRed"
+        android:text="검색" />
+
+<!--end-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
