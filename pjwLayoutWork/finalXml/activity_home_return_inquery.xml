@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--최상단 툴바 -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_returnInquery_topTb"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/darkRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_home_returnInquery_goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="뒤로가기"
+        android:textColor="@color/darkRed"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_returnInquery_topTb"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_returnInquery_topTb"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_returnInquery_topTb" />
+
+    <TextView
+        android:id="@+id/tv_home_returnInquery_topTbText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="반품조회"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_returnInquery_topTb"
+        app:layout_constraintEnd_toEndOf="@+id/tb_home_returnInquery_topTb"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_returnInquery_topTb"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_returnInquery_topTb" />
+
+    <!--최상단 툴바 fin-->
+
+
+    <!--상단 검색필터-->
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnInquery_inqueryFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_returnInquery_topTb">
+
+        <LinearLayout
+            android:id="@+id/layout_home_returnInquery_filter_datePeriod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_home_returnInquery_filter_1day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dimGray"
+                android:text="1일" />
+
+            <Button
+                android:id="@+id/btn_home_returnInquery_filter_1week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dimGray"
+                android:text="1주" />
+
+            <Button
+                android:id="@+id/btn_home_returnInquery_filter_1month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dimGray"
+                android:text="1개월" />
+
+            <Button
+                android:id="@+id/btn_home_returnInquery_filter_3month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dimGray"
+                android:text="3개월" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_home_returnInquery_filter_startDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="9"
+                android:inputType="date" />
+
+            <TextView
+                android:id="@+id/tv_home_returnInquery_filter_betweenDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="----" />
+
+            <EditText
+                android:id="@+id/et_home_returnInquery_filter_endDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="9"
+                android:inputType="date" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_home_returnInquery_filter_returnRequestMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dimGray"
+            android:text="반품 신청 방법" />
+
+        <Button
+            android:id="@+id/btn_home_returnInquery_filter_returnState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dimGray"
+            android:text="반품 진행 상태" />
+
+        <Button
+            android:id="@+id/btn_home_returnInquery_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkRed"
+            android:text="검색" />
+
+    </LinearLayout>
+
+    <!--상단 검색필터 fin -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_home_returnInquery_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnInquery_inqueryFilter"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_returnRequest_item_topTb"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/lightGray" />
+
+    <TextView
+        android:id="@+id/tv_home_returnRequest_item_indexNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_returnRequest_item_topTb"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_returnRequest_item_topTb"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_returnRequest_item_topTb"
+        android:textStyle="bold"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/tv_home_returnRequest_item_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_home_returnRequest_item_indexNum"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_returnRequest_item_topTb"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_returnRequest_item_topTb"
+        android:text="yyyy-mm-dd" />
+
+    <CheckBox
+        android:id="@+id/cb_home_returnRequest_item_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:padding="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_returnRequest_item_topTb"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_brand_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="브랜드" />
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_brand_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="브랜드명" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_productCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnRequest_item_brand"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_productCode_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="상품코드" />
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_productCode_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="상품코드 표시 " />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnRequest_item_productCode"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_productName_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="상품명" />
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_productName_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="상품명 표시" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_standard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnRequest_item_productName"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_standard_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="규격" />
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_standard_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="규격 표시" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_possibleQuantitiy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnRequest_item_standard"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_possibleQuantitiy_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="가능수량" />
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_possibleQuantitiy_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="가능수량 표시" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_requestQuantitiy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnRequest_item_possibleQuantitiy"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_requestQuantitiy_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="의뢰수량" />
+
+        <EditText
+            android:id="@+id/et_home_returnRequest_item_requestQuantitiy_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="5"
+            android:hint="반품할 수량을 입력"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_returnCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnRequest_item_requestQuantitiy"
+        android:padding="6dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_returnCost_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="반품금액" />
+
+        <TextView
+            android:id="@+id/et_home_returnRequest_item_returnCost_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="반품금액 표시" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_home_returnRequest_item_returnType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_returnRequest_item_returnCost"
+        android:padding="6dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_home_returnRequest_item_returnType_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="유형" />
+
+        <Button
+            android:id="@+id/btn_home_returnRequest_item_returnType_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dimGray"
+            android:text="반품유형 선택" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

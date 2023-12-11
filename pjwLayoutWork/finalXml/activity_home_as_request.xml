@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_AS_request_topTb"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/darkRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_home_AS_request_goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="뒤로가기"
+        android:textColor="@color/darkRed"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_AS_request_topTb"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_AS_request_topTb"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_AS_request_topTb" />
+
+    <TextView
+        android:id="@+id/tv_home_AS_request_topTbText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A / S 신청"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_home_AS_request_topTb"
+        app:layout_constraintEnd_toEndOf="@+id/tb_home_AS_request_topTb"
+        app:layout_constraintStart_toStartOf="@+id/tb_home_AS_request_topTb"
+        app:layout_constraintTop_toTopOf="@+id/tb_home_AS_request_topTb" />
+
+    <LinearLayout
+        android:id="@+id/layout_home_As_request_searchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_AS_request_topTb">
+
+        <EditText
+            android:id="@+id/et_home_AS_request_totalSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="통합검색"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/et_home_AS_request_productCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="상품코드"
+            android:inputType="text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_home_AS_request_productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="품목명"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/et_home_AS_request_productBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="브랜드"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_home_AS_request_productStandard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="규격"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/et_home_AS_request_modelNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="모델번호"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_home_AS_request_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkRed"
+            android:text="검색" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_home_AS_request_inform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:text="검색할 상품정보를 입력 후에 검색 버튼을 클릭하세요 . "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_As_request_searchFilter" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_AS_request_itemSort"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/lightGray"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_AS_request_inform" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_home_AS_request_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_AS_request_itemSort" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_home_AS_request_requestSettings"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/lightGray"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_home_AS_request_items" />
+
+    <LinearLayout
+        android:id="@+id/layout_home_As_request_deliverySettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tb_home_AS_request_requestSettings">
+
+        <LinearLayout
+            android:id="@+id/layout_home_As_request_deliverySettings_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_home_AS_request_deliveryMethod_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="배송방법" />
+
+            <Button
+                android:id="@+id/btn_home_AS_request_deliveryMethod_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dimGray"
+                android:text="배송방법 선택" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_home_As_request_deliverySettings_company_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_home_AS_request_company_products_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="사업장 / 물류" />
+
+            <Button
+                android:id="@+id/btn_home_AS_request_company_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dimGray"
+                android:text="지역" />
+
+            <Button
+                android:id="@+id/btn_home_AS_request_products_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dimGray"
+                android:text="물류센터" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_home_AS_request_productInform_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="화물발송정보" />
+
+            <LinearLayout
+                android:id="@+id/layout_home_AS_request_productDeliveryInform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="100dp">
+
+                <EditText
+                    android:id="@+id/et_home_AS_request_productCompanyNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="화물업체"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/et_home_AS_request_transportDocumentNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="운송장번호"
+                    android:inputType="text" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_home_AS_request_requestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_home_As_request_deliverySettings"
+        android:text="A / S 신청" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
